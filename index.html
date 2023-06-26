@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pac-Man</title>
+        <script src="Screens/Game_objects/controller.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/player.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/wall.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/pac_dot.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/score_counter.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/life_counter.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/ghost.js"></script> <!-- Screen size -->
+        <script src="Screens/Game_objects/pac_powerup.js"></script> <!-- Screen size -->
+
+        <script src="Screens/Scripts/window_setup.js"></script> <!-- Screen size -->
+        <script src="Screens/Scripts/main_menu_script.js"></script> <!-- Screen size -->
+        <script src="Screens/Scripts/settings_script.js"></script> <!-- Screen size -->
+        <script src="Screens/Scripts/game_script.js"></script> <!-- Screen size -->
+        <script src="Screens/Scripts/game_over_script.js"></script> <!-- Screen size -->
+        <link rel="stylesheet" href="Screens/CSS/style.css">
+    </head>
+    <body>
+        <audio id="menu_music" loop autoplay="true">
+            <source src="Screens/Resources/Audio/pacman_intermission.wav" type="audio/wav">
+        </audio>
+        <div id="screen_container" class="ui_container">
+            <div class="main_menu" id="main_menu_container">
+                <div id="container" class="ui_container">
+                    <div id="info_button_container">
+                        <button id="info_button">
+                            <p id="p_info">i</a>
+                        </button>
+                    </div>
+                    <div id="main_menu_button_container">
+                        <button id="play_button" class="menu_buttons">
+                            <a id="play_a">Play</a>
+                        </button>
+                        <button id="settings_button" class="menu_buttons">
+                            <a id="settings_a">Settings</a>
+                        </button>
+                    </div>
+                    <div id="how_to_play_text1">
+                        <p id="how_to_play_head">How to play?</p>
+                        <p id="how_to_play_text"><br>The aim of the game is to help the Pac-Man to eat all the pac-dots and earn the highest score. On the other hand, beware the ghosts that are looking for you. Pick up some pac-powerups,</p>
+                    </div>
+                    <div id="how_to_play_text2">
+                        <p id="how_to_play_text">if you find yourself in a trouble and eat them to be able to eat the ghosts. <br> <br>For controlling the game use the "W", "A", "S", "D" keys, however, you can change them in the settings. <br> <br>Good luck!</p>
+                    </div>
+                    <img src="Screens/Resources/Images/wall-papper.png" width="100%" height="100%">
+                </div>
+            </div>
+
+            <!------------------------------------------------------------->
+            <div class="settings" id="settings_container">
+                <div id="container" class="ui_container">
+                    <div id="settings_back_button_container">
+                        <button id="settings_back_button" class="menu_buttons">
+                            <a id="settings_back_text">Back</a>
+                        </button>
+                    </div>
+                    <div class="settings_window_container">
+                        <div class="settings_container">
+                            <div class="settings_background_left">
+                                <h2>Controls</h2>
+                                <div class="keys_container">
+                                    <div class="button_container">
+                                        <button id="button_up" class="button_up">
+                                            <p class="keys_p" id="key_up">W</p>
+                                        </button>
+                                    </div>
+                                    <div class="button_container_asd">
+                                        <button id="button_left" class="button_left">
+                                            <p class="keys_p" id="key_left">A</p>
+                                        </button>
+                                    </div>
+                                    <div class="button_container_asd">
+                                        <button id="button_down" class="button_down">
+                                            <p class="keys_p" id="key_down">S</p>
+                                        </button>
+                                    </div>
+                                    <div class="button_container_asd">
+                                        <button id="button_right" class="button_right">
+                                            <p class="keys_p" id="key_right">D</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings_container">
+                            <div class="settings_background_right">
+                                <h2>Audio</h2>
+                                <div class="audio_controls_container">
+                                    <div class="audio_controls">
+                                        <p class="keys_a"><br>Music:</p>
+                                        <p class="keys_a"><br> <br>Sounds:</p>
+                                    </div>
+                                    <div class="audio_controls">
+                                        <div class="audio_buttons_container">
+                                            <button class="audio_buttons_off" id="music_button">
+                                                <img src="Screens/Resources/Images/UI/music.png" width="80%" height="80%" style="z-index: 10; padding: 10%;">
+                                            </button>
+                                            <button class="audio_buttons_off" id="sounds_button">
+                                                <img src="Screens/Resources/Images/UI/sounds.png" width="80%" height="80%" style="z-index: 10; padding: 10%;">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="Screens/Resources/Images/wall-papper.png" width="100%" height="100%">
+                </div>
+            </div>
+            <!------------------------------------------------------------->
+            <div class="game_screen" id="game_screen_container">
+                <div class="game_canvas_container">
+                    <div class="game_score_container">
+                        <div class="game_score_text_container">
+                            <h3 id="score_counter">Score: XXX</h3>
+                        </div>
+                        <div class="game_score_text_container">
+                            <h3 id="life_counter">Lives: X</h3>
+                        </div>
+                    </div>
+                    <canvas id="game_canvas" width=990 height=1020>
+                    
+                    </canvas>
+                </div>
+                <img src="Screens/Resources/Images/wall-papper.png" width="100%" height="100%">
+            </div>
+            <!---------------------------------------------------------------->
+            <div class="game_over_screen" id="game_over_screen_container">
+                <div class="game_over_buttons_container">
+                    <p id="game_over_text">Game over</p>
+                    <h2 id="game_over_score">Your score: XXX</h2>
+                    <button id="restart_game_button" class="game_over_buttons">
+                        <p class="return_buttons">Restart game</p>
+                    </button>
+                    <button id="main_menu_button" class="game_over_buttons">
+                        <p class="return_buttons">Main menu</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,672 @@
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 500px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+iframe {
+    border: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 5vh;
+    color: rgb(255, 255, 255);
+    transition-duration: 0.5s;
+    display: inline-block;
+}
+
+img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: center;
+    font-size: 7vh;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    cursor: context-menu;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+
+/* ***********************************************/
+
+
+.main_menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+.settings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -11;
+}
+
+.game_screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -12;
+}
+
+.game_over_screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -13;
+    background: rgba(0, 0, 0, 0.692);
+}
+
+/* ************************************************/
+.screens_body {
+    animation: fadein 1s;
+}
+
+.ui_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.menu_buttons {
+    border: 2px solid rgb(0, 217, 255);
+    background: black;
+    border-radius: 100vh;
+    transition-duration: 0.5s;
+}
+
+.menu_buttons:hover {
+    border: 5px solid yellow;
+    box-shadow: 0px 0px 8px 8px rgba(255, 255, 0, 0.664);
+}
+
+.menu_buttons:hover a{
+    color: yellow;
+}
+
+/*---------------- Main Menu -----------------*/
+
+#how_to_play_text1{
+    position: absolute;
+    width: 30%;
+    height: 55%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgb(0, 217, 255);
+    border-radius: 3vh;
+    transition-duration: 0.5s;
+    display: none;
+}
+
+#how_to_play_text2{
+    position: absolute;
+    width: 30%;
+    height: 55%;
+    left: 83%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgb(0, 217, 255);
+    border-radius: 3vh;
+    transition-duration: 0.5s;
+    display: none;
+}
+
+#how_to_play_text1:hover
+{
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.664);
+}
+
+#how_to_play_text1:hover p
+{
+    color: yellow;
+}
+
+#how_to_play_text2:hover
+{
+    border: 2px solid yellow;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.664);
+}
+
+#how_to_play_text2:hover p
+{
+    color: yellow;
+}
+
+#how_to_play_head{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 6vh;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+
+#how_to_play_text{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 4vh;
+    text-align: center;
+    padding: 2%;
+    transition-duration: 0.5s;
+}
+
+#info_button_container{
+    width: 5%;
+    height: 10%;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+
+}
+
+#info_button{
+    width: 100%;
+    height: 100%;
+    border: 6px solid rgb(0, 217, 255);
+    border-radius: 100vh;
+    background: rgba(255, 0, 0, 0);
+    transition-duration: 0.5s;
+}
+
+#info_button:hover {
+    border: 6px solid yellow;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 0, 0.664);
+}
+
+#p_info{
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+#main_menu_button_container {
+    width: calc(100%/3);
+    height: calc(100%/3);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+#play_button {
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    transform: translate(-50%, 0);
+    left: 50%;
+}
+
+#settings_button {
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 60%;
+}
+
+/* ----------------------- Settings ----------------*/
+
+#settings_back_button_container {
+    position: absolute;
+    width: 9%;
+    height: 7%;
+    top: 3%;
+    left: 3%;
+}
+
+#settings_back_button {
+    width: 100%;
+    height: 100%;
+}
+
+#settings_back_button #settings_back_text:after{
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 47%;
+    transform: translate(0, -50%);
+    left: 30%;
+    transition: 0.5s;
+}
+
+#settings_back_button:hover #settings_back_text{
+    padding-left: 25px;
+}
+
+#settings_back_button:hover #settings_back_text:after{
+    opacity: 1;
+    left: 5;
+}
+
+#settings_back_text {
+    font-size: 3vh;
+}
+
+.settings_window_container {
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 50%;
+    width: 100%;
+    height: 70%;
+} 
+
+.settings_container{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.settings_background_left {
+    width: 80%;
+    height: 97%;
+    background: rgba(0, 0, 0, 0.849);
+    position: relative;
+    left: 15%;
+    transform: translate(0, -50%);
+    top: 50%;
+    border: 4px solid rgb(0, 217, 255);
+    border-radius: 5%;
+    transition-duration: 1s;
+}
+
+.settings_background_left:hover {
+    border: 4px yellow solid;
+}
+
+.settings_background_right {
+    width: 80%;
+    height: 97%;
+    background: rgba(0, 0, 0, 0.849);
+    position: relative;
+    left: 5%;
+    transform: translate(0, -50%);
+    top: 50%;
+    border: 4px solid rgb(0, 217, 255);
+    border-radius: 5%;
+    transition-duration: 1s;
+}
+
+.settings_background_right:hover {
+    border: 4px yellow solid;
+}
+
+.keys_container {
+    width: 75%;
+    height: 75%;
+    position: relative;
+    top: 5%;
+    margin: auto;
+}
+
+.button_container {
+    width: 25%;
+    height: 26%;
+    position: relative;
+    margin: auto;
+    padding-top: 15%;
+}
+
+.button_container_asd {
+    width: 25%;
+    height: 26%;
+    position: relative;
+    float: left;
+    position: relative;
+    margin-left: 6.28%;
+    margin-top: 5%;
+}
+
+.keys_p {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 5vh;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.selected_button {
+    border: 5px rgb(0, 38, 255) solid;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    transition-duration: 0.5s;
+}
+
+.selected_button:hover {
+    border: 5px rgb(0, 38, 255) solid;
+    box-shadow: 0px 0px 10px 10px rgba(4, 0, 255, 0.551);
+}
+
+.button_up {
+    border: 5px white solid;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    transition-duration: 0.5s;
+}
+
+.button_up:hover {
+    border: 5px yellow solid;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.551);
+}
+
+.button_left {
+    border: 5px white solid;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    transition-duration: 0.5s;
+}
+
+.button_down {
+    border: 5px white solid;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    transition-duration: 0.5s;
+}
+
+.button_right {
+    border: 5px white solid;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    transition-duration: 0.5s;
+}
+
+.button_up:hover {
+    border: 5px yellow solid;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.551);
+}
+
+.button_left:hover {
+    border: 5px yellow solid;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.551);
+}
+
+.button_down:hover {
+    border: 5px yellow solid;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.551);
+}
+
+.button_right:hover {
+    border: 5px yellow solid;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.551);
+}
+
+.audio_controls_container {
+    width: 80%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.audio_controls {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.audio_buttons_off {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    background: rgba(0, 0, 0, 0);
+    border: 4px solid rgb(255, 0, 0);
+    border-radius: 5%;
+    transition-duration: 0.5s;
+
+}
+
+.audio_buttons_off:hover {
+    box-shadow: 0px 0px 10px 10px rgb(255, 0, 0, 0.7);
+}
+
+.audio_buttons_on {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    background: rgba(0, 0, 0, 0);
+    border: 4px solid rgb(17, 255, 0);
+    border-radius: 5%;
+    transition-duration: 0.5s;
+
+}
+.audio_buttons_on:hover {
+    box-shadow: 0px 0px 10px 10px rgb(17, 255, 0, 0.7);
+}
+
+.audio_buttons_container {
+    width: 40%;
+    height: 100%;
+    margin: auto;
+}
+
+#music_button {
+    margin-top: 35%;
+}
+
+#sounds_button {
+    margin-top: 60%;
+}
+
+.keys_a {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 5vh;
+    font-weight: bold;
+    cursor: context-menu;
+    text-align: center;
+}
+
+/* ----------------------- Game Screen ----------------*/
+
+.game_canvas_container {
+    position: absolute;
+    width: 45%;
+    height: 95%;
+    background: white;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border: white 5px solid;
+}
+
+.game_score_container {
+    width: 100%;
+    height: 8%;
+    background: black;
+    position: absolute;
+}
+
+.game_score_text_container {
+    height: 100%;
+    width: 50%;
+    background: rgb(0, 0, 0);
+    float: left;
+}
+
+#game_canvas {
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    height: 92%;
+    background: black;
+}
+
+#temp_end_game_button {
+    position: absolute;
+    transform: translate(-100%, -100%);
+    width: 20%;
+    height: 14%;
+    background: rgb(255, 255, 255);
+    top: 50%;
+    left: -20%;
+}
+
+#score_counter {
+    text-align: left;
+    font-size: 5vh;
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 3%;
+}
+
+#life_counter {
+    text-align: right;
+    color: white;
+    font-size: 5vh;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 3%;
+}
+
+/*********************************************************/
+
+.game_over_buttons_container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 45%;
+    height: 55%;
+}
+
+
+.game_over_buttons {
+    position: absolute;
+    width: 40%;
+    height: 18%;
+    background: rgb(0, 0, 0);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px rgb(0, 217, 255) solid;
+    border-radius: 20vh;
+    transition-duration: 0.5s;
+}
+
+.game_over_buttons:hover {
+    border: 5px yellow solid;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.551);
+}
+
+
+
+#restart_game_button {
+    top: 59%;
+}
+
+#main_menu_button {
+    top: 87%;
+}
+
+#game_over_text {
+    text-align: center;
+    font-size: 10vh;
+    color: rgb(255, 238, 0);
+    text-shadow: 5px 5px rgba(0, 0, 255, 0.423);
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#game_over_score {
+    font-size: 5vh;
+    color: rgb(255, 238, 0);
+    text-shadow: 5px 5px rgba(0, 0, 255, 0.423)
+}
+
+.return_buttons {
+    font-size: 4vh;
+    color: white;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
